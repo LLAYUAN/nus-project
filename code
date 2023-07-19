@@ -28,7 +28,8 @@ const mystery_box = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.
 const ground5 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
 const ground6 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
 const main_cam_target = get_main_camera_following_target();
-
+//set mushroom walk up and down
+const mushroom1= instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png");
 function start_player(gameObject){
     set_position(gameObject, -2, 2, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
@@ -37,7 +38,7 @@ function start_player(gameObject){
 
 const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
 const start_ground1 = (gameObject) => set_position(gameObject, 3, -1, 0);
-const start_ground2 = (gameObject) => set_position(gameObject, 7, 0.2, 0);
+const start_ground2 = (gameObject) => set_position(gameObject, 7, 1.2, 0);
 const start_wall1 = (gameObject) => {
     set_position(gameObject, -6, 1.8, 0);
     set_rotation_euler(gameObject, 0, 0, 90);
@@ -53,12 +54,26 @@ const start_mystery_box = (gameObject) =>{
     set_position(gameObject, 1, 1.5, 0);
 };
 
-const start_mushroom = (gameObject) =>{
+/*const start_mushroom = (gameObject) =>{
     set_position(gameObject, 1, 2.5, 0);
+    apply_rigidbody(gameObject);
+};*/
+const start_peashooter1= (gameObject)=>{
+    set_position(gameObject,1,2,0);
+    set_scale(gameObject,0.2,0.2,0.2);
+};
+const start_pea1 = (gameObject)=>{
+    set_position(gameObject,1.2,2.15,0);
+    set_scale(gameObject,0.6,0.6,1);
+};// only the pea on certain position can use this function
+  // every pea x(peashooter)+0.2 y(peashooter)+0.15;
+const start_mushroom1 = (gameObject)=>{
+    set_position(gameObject,5,2.15,0);
     apply_rigidbody(gameObject);
 };
 
-const update_mushroom = (gameObject) =>{
+//set auto mushroom
+/*const update_mushroom = (gameObject) =>{
     
     const deltaX = get_position(gameObject)[0] - get_position(mario)[0];
     const deltaY = get_position(gameObject)[1] - get_position(mario)[1];
@@ -75,8 +90,11 @@ const update_mushroom = (gameObject) =>{
     }
     
     set_rotation_euler(gameObject, 0, 0, 0);
-};
-
+};*/
+//every pea can use this function because every is shoot toward right
+function update_pea(gameObject){
+    translate_world(gameObject, delta_time(),0,0);
+}
 function update_player(gameObject){
     
     const moveSpeed = 3;
@@ -97,8 +115,8 @@ function update_player(gameObject){
     copy_position(gameObject, main_cam_target, 0, 0, Infinity);
 }
 
-let mushroom = null;
-
+//let mushroom = null;
+/*
 function marioOnCollisionEnter(self, other){
     
     // When player touches the mystery box, spawn the mushroom above the box
@@ -115,7 +133,33 @@ function marioOnCollisionEnter(self, other){
         mushroom = null;
     }
 }
+*/
 
+let peashooter1=null;
+function marioCbox1(self,other){
+    if(same_gameobject(other,mystery_box)&&is_null(peashooter1)){
+        peashooter1= instantiate_sprite("https://s2.loli.net/2023/07/19/oVSbhH7XDiwPmdj.png");
+        set_start(peashooter1,start_peashooter1);
+    }
+}
+
+//when mario touches the peashooter, peashooter shoot
+let pea1=null;
+function marioCpeashooter1(self,other){
+    if(same_gameobject(other,peashooter1)&&is_null(pea1)){
+        pea1=instantiate_sprite("https://s2.loli.net/2023/07/19/QSuJvp651WCkX8H.png");
+        set_start(pea1,start_pea1);
+        set_update(pea1,update_pea);
+    }
+}
+
+//when pea1 touches mushroom1, they disappear together
+function pea1Cmushroom1(self,other){
+    if(same_gameobject(other,pea1)) {
+        destroy(self);
+        destroy(pea1);
+    }
+}
 set_start(ground, start_ground);
 set_start(ground1, start_ground1);
 set_start(ground2, start_ground2);
@@ -123,6 +167,11 @@ set_start(wall1, start_wall1);
 set_start(ground4, start_ground4);
 set_start(ground3, start_ground3);
 set_start(mystery_box, start_mystery_box);
+set_start(mushroom1,start_mushroom1);
 set_start(mario, start_player);
 set_update(mario, update_player);
-on_collision_enter(mario, marioOnCollisionEnter);
+on_collision_enter(mario, marioCbox1);
+on_collision_stay(mario,marioCpeashooter1);
+on_collision_enter(mushroom1,pea1Cmushroom1);
+
+
