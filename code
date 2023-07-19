@@ -3,7 +3,7 @@
 // A and D: Walk left and right
 // W: Jump
 //
-
+//every square's width is 2/3
 import {init_unity_academy_3d, init_unity_academy_2d, set_start, set_update,
 instantiate, delta_time, instantiate_sprite, same_gameobject, destroy,
 translate_world,get_key_down, get_key, get_key_up, get_position, copy_position,
@@ -29,7 +29,8 @@ const ground5 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amaz
 const ground6 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
 const main_cam_target = get_main_camera_following_target();
 //set mushroom walk up and down
-const mushroom1= instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png");
+//const mushroom1= instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png");
+const mushroom2= instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png");
 function start_player(gameObject){
     set_position(gameObject, -2, 2, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
@@ -38,12 +39,12 @@ function start_player(gameObject){
 
 const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
 const start_ground1 = (gameObject) => set_position(gameObject, 3, -1, 0);
-const start_ground2 = (gameObject) => set_position(gameObject, 7, 1.2, 0);
+const start_ground2 = (gameObject) => set_position(gameObject, 5, 1.2, 0);
 const start_wall1 = (gameObject) => {
     set_position(gameObject, -6, 1.8, 0);
     set_rotation_euler(gameObject, 0, 0, 90);
 };
-const start_ground4 = (gameObject) => {set_position(gameObject, 10, 1.4, 0);};
+const start_ground4 = (gameObject) => {set_position(gameObject, 12, 1.4, 0);};
 
 
 const start_ground3 = (gameObject) =>{
@@ -67,11 +68,15 @@ const start_pea1 = (gameObject)=>{
     set_scale(gameObject,0.6,0.6,1);
 };// only the pea on certain position can use this function
   // every pea x(peashooter)+0.2 y(peashooter)+0.15;
-const start_mushroom1 = (gameObject)=>{
+/*const start_mushroom1 = (gameObject)=>{
+    set_position(gameObject,5,2.15,0);
+    apply_rigidbody(gameObject);
+};*/
+
+const start_mushroom2= (gameObject)=>{
     set_position(gameObject,5,2.15,0);
     apply_rigidbody(gameObject);
 };
-
 //set auto mushroom
 /*const update_mushroom = (gameObject) =>{
     
@@ -115,6 +120,22 @@ function update_player(gameObject){
     copy_position(gameObject, main_cam_target, 0, 0, Infinity);
 }
 
+//mushroom2 is walking up and down
+//***get_position do get a number***
+//***two translate can be added***
+function walk_up_and_down(gameObject,left,right){
+    //const x=get_position(ground)[0]-0.1;why i cant use this way?
+    //const y=get_position(ground)[0]+0.1;
+    let flag=1;//flag is used to judge walk left/right
+function update_mushroom(gameObject){
+    
+    if(get_position(gameObject)[0]<left) {flag=1;}
+    if(!is_null(flag)) {translate_world(gameObject,delta_time(),0,0);}
+    if(get_position(gameObject)[0]>right) {flag=null;}
+    if(is_null(flag)) {translate_world(gameObject,-1*delta_time(),0,0);}
+ }
+ set_update(gameObject,update_mushroom);
+}
 //let mushroom = null;
 /*
 function marioOnCollisionEnter(self, other){
@@ -153,13 +174,14 @@ function marioCpeashooter1(self,other){
     }
 }
 
-//when pea1 touches mushroom1, they disappear together
-function pea1Cmushroom1(self,other){
+//when pea1 touches mushroom2, they disappear together
+function pea1Cmushroom2(self,other){
     if(same_gameobject(other,pea1)) {
         destroy(self);
         destroy(pea1);
     }
-}
+  }
+
 set_start(ground, start_ground);
 set_start(ground1, start_ground1);
 set_start(ground2, start_ground2);
@@ -167,11 +189,13 @@ set_start(wall1, start_wall1);
 set_start(ground4, start_ground4);
 set_start(ground3, start_ground3);
 set_start(mystery_box, start_mystery_box);
-set_start(mushroom1,start_mushroom1);
+//set_start(mushroom1,start_mushroom1);
+set_start(mushroom2,start_mushroom2);
 set_start(mario, start_player);
 set_update(mario, update_player);
+walk_up_and_down(mushroom2,3,7);
 on_collision_enter(mario, marioCbox1);
 on_collision_stay(mario,marioCpeashooter1);
-on_collision_enter(mushroom1,pea1Cmushroom1);
+on_collision_enter(mushroom2,pea1Cmushroom2);
 
 
