@@ -27,6 +27,7 @@ const ground3 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amaz
 const mystery_box = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mystery_box.png");
 const ground5 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
 const ground6 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
+const ground_far = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
 const main_cam_target = get_main_camera_following_target();
 //set mushroom walk up and down
 //const mushroom1= instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png");
@@ -44,13 +45,13 @@ const start_wall1 = (gameObject) => {
     set_position(gameObject, -6, 1.8, 0);
     set_rotation_euler(gameObject, 0, 0, 90);
 };
-const start_ground4 = (gameObject) => {set_position(gameObject, 12, 1.4, 0);};
-
-
 const start_ground3 = (gameObject) =>{
     set_position(gameObject, -4, -1, 0);
 };
 
+const start_ground4 = (gameObject) => {set_position(gameObject, 12, 1.4, 0);};
+
+const start_ground_far = (gameObject)=>{set_position(gameObject,25,1,0);};
 const start_mystery_box = (gameObject) =>{
     set_position(gameObject, 1, 1.5, 0);
 };
@@ -197,5 +198,19 @@ walk_up_and_down(mushroom2,3,7);
 on_collision_enter(mario, marioCbox1);
 on_collision_stay(mario,marioCpeashooter1);
 on_collision_enter(mushroom2,pea1Cmushroom2);
+
+set_start(ground_far,start_ground_far);
+/*不确定这样传送马里奥行不行
+destroy(mario);
+function start_player_again(gameObject){
+    set_position(gameObject, 25, 2, 0);
+    set_scale(gameObject, 0.5, 0.5, 1);
+    apply_rigidbody(gameObject);
+}
+const mario2=instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario.png");
+set_start(mario2,start_player_again);
+set_update(mario2, update_player);
+*/
+
 
 
