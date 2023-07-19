@@ -22,9 +22,11 @@ const ground = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazo
 const ground1 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
 const ground2 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
 const wall1 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-const wall2 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-const slope = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
+const ground4 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
+const ground3 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
 const mystery_box = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mystery_box.png");
+const ground5 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
+const ground6 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
 const main_cam_target = get_main_camera_following_target();
 
 function start_player(gameObject){
@@ -35,20 +37,16 @@ function start_player(gameObject){
 
 const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
 const start_ground1 = (gameObject) => set_position(gameObject, 3, -1, 0);
-const start_ground2 = (gameObject) => set_position(gameObject, 6, 0, 0);
+const start_ground2 = (gameObject) => set_position(gameObject, 7, 0.2, 0);
 const start_wall1 = (gameObject) => {
     set_position(gameObject, -6, 1.8, 0);
     set_rotation_euler(gameObject, 0, 0, 90);
 };
-const start_wall2 = (gameObject) => {
-    set_position(gameObject, 8.75, 1.6, 0);
-    set_rotation_euler(gameObject, 0, 0, 90);
-};
+const start_ground4 = (gameObject) => {set_position(gameObject, 10, 1.4, 0);};
 
 
-const start_slope = (gameObject) =>{
+const start_ground3 = (gameObject) =>{
     set_position(gameObject, -4, -1, 0);
-    set_rotation_euler(gameObject, 0, 0, -10);
 };
 
 const start_mystery_box = (gameObject) =>{
@@ -122,8 +120,8 @@ set_start(ground, start_ground);
 set_start(ground1, start_ground1);
 set_start(ground2, start_ground2);
 set_start(wall1, start_wall1);
-set_start(wall2, start_wall2);
-set_start(slope, start_slope);
+set_start(ground4, start_ground4);
+set_start(ground3, start_ground3);
 set_start(mystery_box, start_mystery_box);
 set_start(mario, start_player);
 set_update(mario, update_player);
