@@ -40,7 +40,11 @@ const mushroom_url="https://unity-academy.s3.ap-southeast-1.amazonaws.com/extern
 const mobilebox_url="https://s2.loli.net/2023/07/20/sTCYW5cmzr7EoLi.png";
 const stab_url="https://s2.loli.net/2023/07/20/JXCiUTH3uKcWDBb.png";
 const game_over_url="https://s2.loli.net/2023/07/20/odwHNmiYGEcB4KI.png";
+const youwin_url="https://s2.loli.net/2023/07/20/v1jrgYiKlZQ9ktO.png";
+const bee_url="https://s2.loli.net/2023/07/20/57z1BWvc8Ns6wuF.png";
+const boss_url="https://s2.loli.net/2023/07/20/IaoYv9xQgHPfVE6.png";
 const mario = instantiate_sprite(mario_url);
+const boss = instantiate_sprite(boss_url);
 const ground = instantiate_sprite(ground_url);
 const ground1 = instantiate_sprite(ground_url);
 const ground2 = instantiate_sprite(ground_url);
@@ -96,12 +100,38 @@ const slope = instantiate_sprite(ground_url);
 const slope1 = instantiate_sprite(ground_url);
 const slope2 = instantiate_sprite(ground_url);
 const slope3 = instantiate_sprite(ground_url);
-
+const peashooter_big=instantiate_sprite(peashooter_url);
 const mystery_box1 = instantiate_sprite(mysterybox_url);
+const mystery_box2 = instantiate_sprite(mysterybox_url);
+const mystery_box3 = instantiate_sprite(mysterybox_url);
+const mystery_box4 = instantiate_sprite(mysterybox_url);
+const mystery_box5 = instantiate_sprite(mysterybox_url);
 const mushroom1 = instantiate_sprite(mushroom_url);
+const mushroom2 = instantiate_sprite(mushroom_url);
+const mushroom3 = instantiate_sprite(mushroom_url);
+const mushroom5 = instantiate_sprite(mushroom_url);
+const bee1 = instantiate_sprite(bee_url);
+const bee2 = instantiate_sprite(bee_url);
+const bee3 = instantiate_sprite(bee_url);
+const bee4 = instantiate_sprite(bee_url);
+const bee5 = instantiate_sprite(bee_url);
 const stab1 = instantiate_sprite(stab_url);
 const stab2 = instantiate_sprite(stab_url);
 const stab3 = instantiate_sprite(stab_url);
+const stab4 = instantiate_sprite(stab_url);
+const stab5 = instantiate_sprite(stab_url);
+const stab6 = instantiate_sprite(stab_url);
+const stab7 = instantiate_sprite(stab_url);
+const stab8 = instantiate_sprite(stab_url);
+const stab9 = instantiate_sprite(stab_url);
+const stab10 = instantiate_sprite(stab_url);
+const stab11 = instantiate_sprite(stab_url);
+const stab12 = instantiate_sprite(stab_url);
+const stab13 = instantiate_sprite(stab_url);
+const stab14 = instantiate_sprite(stab_url);
+const stab15 = instantiate_sprite(stab_url);
+const stab16 = instantiate_sprite(stab_url);
+const stab17 = instantiate_sprite(stab_url);
 
 const flagpole1 = instantiate_sprite(flagpole_url);
 const flagpole2 = instantiate_sprite(flagpole_url);
@@ -131,9 +161,9 @@ const start_ground6 = (gameObject) => set_position(gameObject, 18, 0, 0);
 const start_ground7 = (gameObject) => set_position(gameObject, 21, -1, 0);
 const start_ground8 = (gameObject) => set_position(gameObject, 24, 0, 0);
 const start_ground9 = (gameObject) => set_position(gameObject, 27, -2, 0);
-const start_ground10 = (gameObject) => set_position(gameObject, 30, -1, 0);
-const start_ground11 = (gameObject) => set_position(gameObject, 33, 0, 0);
-const start_ground12 = (gameObject) => set_position(gameObject, 36, 1, 0);
+const start_ground10 = (gameObject) => set_position(gameObject, 30, 0.5, 0);
+const start_ground11 = (gameObject) => set_position(gameObject, 34, 0.5, 0);
+const start_ground12 = (gameObject) => set_position(gameObject, 38, 0.5, 0);
 const start_ground13 = (gameObject) => set_position(gameObject, 25, -15, 0);
 const start_ground14 = (gameObject) => set_position(gameObject, 28, -15, 0);
 const start_ground15 = (gameObject) => set_position(gameObject, 31, -15, 0);
@@ -239,11 +269,76 @@ const start_mystery_box1 = (gameObject) =>{
      set_position(gameObject, -0.5, -0.6, 0);
 };
 
+const start_mystery_box2 = (gameObject) =>{
+    set_position(gameObject, 17.5, 2.4, 0);
+};
+
+const start_mystery_box3 = (gameObject) =>{
+    set_position(gameObject, 10, 0.3, 0);
+};
+
+const start_mystery_box4 = (gameObject) =>{
+    set_position(gameObject, 33, 2, 0);
+};
+
+const start_mystery_box5 = (gameObject) =>{
+    set_position(gameObject, 39.9, 1.5, 0);
+};
+
 const start_mushroom1 = (gameObject) =>{
     set_position(gameObject,1,0,0);
     apply_rigidbody(gameObject);
 };
 
+const start_mushroom2 = (gameObject) =>{
+    set_position(gameObject,17.5,1,0);
+    apply_rigidbody(gameObject);
+};
+
+const start_mushroom3 = (gameObject) =>{
+    set_position(gameObject,26,-1,0);
+    apply_rigidbody(gameObject);
+};
+
+const start_mushroom4= (gameObject)=> {
+            set_position(gameObject,17.5,2.9,0);
+            apply_rigidbody(gameObject);
+        };
+const start_mushroom5= (gameObject)=> {
+            set_position(gameObject,44,1,0);
+            apply_rigidbody(gameObject);
+};
+
+const start_bee1= (gameObject)=> {
+    set_position(gameObject,39,-2,-50);
+    set_scale(gameObject,0.2,0.2,0.2);
+};
+
+const start_bee2 = (gameObject)=> {
+    set_position(gameObject,37,-4,-50);
+    set_scale(gameObject,0.2,0.2,0.2);
+};
+
+const start_bee3 = (gameObject)=> {
+    set_position(gameObject,35,-6,-50);
+    set_scale(gameObject,0.2,0.2,0.2);
+};
+
+const start_bee4 = (gameObject)=> {
+    set_position(gameObject,33,-8,-50);
+    set_scale(gameObject,0.2,0.2,0.2);
+};
+
+const start_bee5 = (gameObject)=> {
+    set_position(gameObject,31,-10,-50);
+    set_scale(gameObject,0.2,0.2,0.2);
+};
+
+const start_boss = (gameObject)=> {
+    set_position(gameObject,44,-12,-50);
+    set_scale(gameObject,1.5,1.5,1.5);
+    apply_rigidbody(gameObject);
+};
 const start_stab1 = (gameObject) =>{
     set_position(gameObject,0,-1.25,0);
 };
@@ -255,24 +350,110 @@ const start_stab2 = (gameObject) =>{
 const start_stab3 = (gameObject) =>{
     set_position(gameObject,-0.5,-1.25,0);
 };
-/*const start_mushroom = (gameObject) =>{
-    set_position(gameObject, 1, 2.5, 0);
+
+const start_stab4 = (gameObject) =>{
+    set_position(gameObject,8.5,-0.3,0);
+};
+
+const start_stab5 = (gameObject) =>{
+    set_position(gameObject,10.5,-0.3,0);
+};
+
+const start_stab6 = (gameObject) =>{
+    set_position(gameObject,11,-0.3,0);
+};
+
+const start_stab7 = (gameObject) =>{
+    set_position(gameObject,11.5,-0.3,0);
+};
+
+const start_stab8 = (gameObject) =>{
+    set_position(gameObject,12,-0.3,0);
+};
+
+const start_stab9 = (gameObject) =>{
+    set_position(gameObject,12.5,-0.3,0);
+};
+
+const start_stab10 = (gameObject) =>{
+    set_position(gameObject,20.5,-0.3,0);
+};
+
+const start_stab11 = (gameObject) =>{
+    set_position(gameObject,21,-0.3,0);
+};
+
+const start_stab12 = (gameObject) =>{
+    set_position(gameObject,21.5,-0.3,0);
+};
+
+const start_stab13 = (gameObject) =>{
+    set_position(gameObject,40.5,0.7,0);
+};
+
+const start_stab14 = (gameObject) =>{
+    set_position(gameObject,41,0.7,0);
+};
+
+const start_stab15 = (gameObject) =>{
+    set_position(gameObject,41.5,0.7,0);
+};
+
+const start_stab16 = (gameObject) =>{
+    set_position(gameObject,42,0.7,0);
+};
+
+const start_stab17 = (gameObject) =>{
+    set_position(gameObject,42.5,0.7,0);
+};
+const start_mobilebox = (gameObject) =>{
+    set_position(gameObject,33,2.5,0);
+    set_scale(gameObject,4,4,4);
     apply_rigidbody(gameObject);
-};*/
+};
+
 const start_peashooter1= (gameObject)=>{
     set_position(gameObject,-0.5,-0.1,0);
     set_scale(gameObject,0.2,0.2,0.2);
 };
+
+const start_peashooter2= (gameObject)=>{
+    set_position(gameObject,10,0.8,0);
+    set_scale(gameObject,0.2,0.2,0.2);
+};
+
+const start_peashooter3= (gameObject)=>{
+    set_position(gameObject,39.9,2,0);
+    set_scale(gameObject,0.2,0.2,0.2);
+};
+
+const start_peashooter_big= (gameObject)=>{
+    set_position(gameObject,33,-12.5,-50);
+    set_scale(gameObject,1.5,1.5,1.5);
+};
+
 const start_pea1 = (gameObject)=>{
     set_position(gameObject,-0.3,0.05,0);
     set_scale(gameObject,0.6,0.6,1);
 };// only the pea on certain position can use this function
   // every pea x(peashooter)+0.2 y(peashooter)+0.15;
 
+const start_pea2 = (gameObject)=>{
+    set_position(gameObject,10.2,0.95,0);
+    set_scale(gameObject,0.6,0.6,1);
+};
 
+const start_pea3 = (gameObject)=>{
+    set_position(gameObject,40.1,2.15,0);
+    set_scale(gameObject,0.6,0.6,1);
+};
 
+const start_pea_big = (gameObject)=> {
+    set_position(gameObject,37,-11.5,-50);
+    set_scale(gameObject,1.5,1.5,1.5);
+};
 //set auto mushroom
-/*const update_mushroom = (gameObject) =>{
+const update_auto_mushroom = (gameObject) =>{
     
     const deltaX = get_position(gameObject)[0] - get_position(mario)[0];
     const deltaY = get_position(gameObject)[1] - get_position(mario)[1];
@@ -285,18 +466,30 @@ const start_pea1 = (gameObject)=>{
         translate_world(gameObject, delta_time(), 0, 0);
     }
     if(deltaY < -0.1 && math_abs(get_velocity(gameObject)[1]) <= 0.05){
-        add_impulse_force(gameObject, 0, 5, 0);
+        add_impulse_force(gameObject, 0, 1, 0);
     }
     
     set_rotation_euler(gameObject, 0, 0, 0);
-};*/
+};
+
 //every pea can use this function because every is shoot toward right
 function update_pea(gameObject){
     translate_world(gameObject, delta_time(),0,0);
 }
 
+let is_win=0;
 function update_flag(gameObject){
     if(get_position(gameObject)[1]>-13){translate_world(gameObject,0,-delta_time(),0);}
+    if(get_position(gameObject)[1]<=-12&&is_win!==1){
+        const youwin=instantiate_sprite(youwin_url);
+        const youwin_start= (gameObj)=>{
+            set_position(gameObj,get_position(main_cam_target)[0],
+        get_position(main_cam_target)[1]+3,-500);
+            set_scale(gameObj,0.5,0.5,0.01);
+        };
+        set_start(youwin,youwin_start);
+        is_win=1;
+    }
 }
 
 function update_player(gameObject){
@@ -316,7 +509,7 @@ function update_player(gameObject){
 
     set_rotation_euler(gameObject, 0, 0, 0);
     
-    if(health===0){
+    if(health<=0){
         destroy(mario);
         const gameover=instantiate_sprite(game_over_url);
         const start_gameover=(gameObj)=>set_position(gameObj,
@@ -393,29 +586,82 @@ function update_heart3(gameObject){
     }
 }
 
-//when pea1 touches mushroom, they disappear together
+//when pea1 touches mushroom1, they disappear together
 function pea1Cmushroom(self,other){
     if(same_gameobject(other,pea1)) {
         destroy(self);
         destroy(pea1);
     }
   }
+  
+//when pea2 touches mushroom4, they disappear together
+function pea2Cmushroom(self,other){
+    if(same_gameobject(other,pea2)) {
+        destroy(self);
+        destroy(pea2);
+    }
+  }
 
+//when pea3 touches mushroom5, they disappear together
+function pea3Cmushroom(self,other){
+    if(same_gameobject(other,pea3)) {
+        destroy(self);
+        destroy(pea3);
+    }
+  }
+
+function pea_bigCboss(self,other){
+    if(same_gameobject(other,pea_big)) {
+        destroy(self);
+        destroy(pea_big);
+    }
+  }
 let health=3;
 function gethit(){
     health=health-1;
 }
 
 let peashooter1=null;
+let peashooter2=null;
+let peashooter3=null;
+let mushroom4=null;
+let mobilebox=null;
 let pea1=null;
+let pea2=null;
+let pea3=null;
+let pea_big=null;
 let is_down=null;
 function marioCsth(self,other){
-    // mario touches mystery_box1
+    // mario touches mystery_box1 get peashooter1
     if(same_gameobject(other,mystery_box1)&&is_null(peashooter1)){
         peashooter1= instantiate_sprite(peashooter_url);
         set_start(peashooter1,start_peashooter1);
     }
     
+    // mario touches mystery_box3 get peashooter2
+    if(same_gameobject(other,mystery_box3)&&is_null(peashooter2)){
+        peashooter2= instantiate_sprite(peashooter_url);
+        set_start(peashooter2,start_peashooter2);
+    }
+    
+    // mario touches mystery_box5 get peashooter3
+    if(same_gameobject(other,mystery_box5)&&is_null(peashooter3)){
+        peashooter3= instantiate_sprite(peashooter_url);
+        set_start(peashooter3,start_peashooter3);
+    }
+    
+    // mario touches mystery_box2 danger
+     if(same_gameobject(other,mystery_box2)&&is_null(mushroom4)){
+        mushroom4= instantiate_sprite(mushroom_url);
+        set_start(mushroom4,start_mushroom4);
+        set_update(mushroom4,update_auto_mushroom);
+    }
+    
+    // mario touches mystery_box4 get a mobile box
+    if(same_gameobject(other,mystery_box4)&&is_null(mobilebox)){
+        mobilebox= instantiate_sprite(mobilebox_url);
+        set_start(mobilebox,start_mobilebox);
+    }
     //when mario touches the peashooter, peashooter shoot
     if(same_gameobject(other,peashooter1)&&is_null(pea1)){
         pea1=instantiate_sprite(pea_url);
@@ -423,33 +669,169 @@ function marioCsth(self,other){
         set_update(pea1,update_pea);
     }
     
-    ////when mario touches mushroom, he gets hit
+     if(same_gameobject(other,peashooter2)&&is_null(pea2)){
+        pea2=instantiate_sprite(pea_url);
+        set_start(pea2,start_pea2);
+        set_update(pea2,update_pea);
+    }
+    
+    if(same_gameobject(other,peashooter3)&&is_null(pea3)){
+        pea3=instantiate_sprite(pea_url);
+        set_start(pea3,start_pea3);
+        set_update(pea3,update_pea);
+    }
+    
+    if(same_gameobject(other,peashooter_big)&&is_null(pea_big)){
+        pea_big=instantiate_sprite(pea_url);
+        set_start(pea_big,start_pea_big);
+        set_update(pea_big,update_pea);
+    }
+    ////when mario touches mushroom or bee or boss , he gets hit
     if(same_gameobject(other,mushroom1)){
         destroy(mushroom1);
         gethit();
     }
     
+     if(same_gameobject(other,mushroom2)){
+        destroy(mushroom2);
+        gethit();
+    }
+    
+     if(same_gameobject(other,mushroom3)){
+        destroy(mushroom3);
+        gethit();
+    }
+    
+    if(same_gameobject(other,mushroom4)){
+        destroy(mushroom4);
+        gethit();
+    }
+    
+    if(same_gameobject(other,mushroom5)){
+        destroy(mushroom5);
+        gethit();
+    }
+    
+    if(same_gameobject(other,bee1)){
+        destroy(bee1);
+        gethit();
+    }
+    
+    if(same_gameobject(other,bee2)){
+        destroy(bee2);
+        gethit();
+    }
+    
+    if(same_gameobject(other,bee3)){
+        destroy(bee3);
+        gethit();
+    }
+    
+    if(same_gameobject(other,bee4)){
+        destroy(bee4);
+        gethit();
+    }
+    
+    if(same_gameobject(other,bee5)){
+        destroy(bee5);
+        gethit();
+    }
+    
+    if(same_gameobject(other,boss)){
+        destroy(boss);
+        gethit();
+        gethit();
+        gethit();
+    }
     //mario touches flag and flag down
     if(same_gameobject(other,flag)) {is_down=1;}
     if(is_down===1) {
         set_update(flag,update_flag);
     }
     
-    //mario touches stab1
+    //mario touches stab1,gets hit
     if(same_gameobject(other,stab1)){
         destroy(stab1);
         gethit();
     }
     
-    //mario touches stab2
     if(same_gameobject(other,stab2)){
         destroy(stab2);
         gethit();
     }
     
-    //mario touches stab3
     if(same_gameobject(other,stab3)){
         destroy(stab3);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab4)){
+        destroy(stab4);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab5)){
+        destroy(stab5);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab6)){
+        destroy(stab6);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab7)){
+        destroy(stab7);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab8)){
+        destroy(stab8);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab9)){
+        destroy(stab9);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab10)){
+        destroy(stab10);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab11)){
+        destroy(stab11);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab12)){
+        destroy(stab12);
+        gethit();
+    }
+    
+     if(same_gameobject(other,stab13)){
+        destroy(stab13);
+        gethit();
+    }
+    
+     if(same_gameobject(other,stab14)){
+        destroy(stab14);
+        gethit();
+    }
+    
+     if(same_gameobject(other,stab15)){
+        destroy(stab15);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab16)){
+        destroy(stab16);
+        gethit();
+    }
+    
+    if(same_gameobject(other,stab17)){
+        destroy(stab17);
         gethit();
     }
 }
@@ -465,18 +847,22 @@ const start_far_ground3= (gameObject)=> set_position(gameObject,510,0,0);
 const start_far_ground4= (gameObject)=> set_position(gameObject,495,0,0);
 const start_far_ground5= (gameObject)=> set_position(gameObject,490,0,0);
 
-function start_player_again(gameObject){
+/*function start_player_again(gameObject){
     set_position(gameObject, 25, 2, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
-}
-
+}*/
+set_start(peashooter_big,start_peashooter_big);
 set_start(far_ground1,start_far_ground1);
 set_start(far_ground2,start_far_ground2);
 set_start(far_ground3,start_far_ground3);
 set_start(far_ground4,start_far_ground4);
 set_start(far_ground5,start_far_ground5);
 set_start(mystery_box1, start_mystery_box1);
+set_start(mystery_box2, start_mystery_box2);
+set_start(mystery_box3,start_mystery_box3);
+set_start(mystery_box4,start_mystery_box4);
+set_start(mystery_box5,start_mystery_box5);
 set_start(mario, start_player);
 set_start(heart1,start_heart1);
 set_start(heart2,start_heart2);
@@ -542,36 +928,59 @@ set_start(slope1, start_slope1);
 set_start(slope2, start_slope2);
 set_start(slope3, start_slope3);
 set_start(mushroom1,start_mushroom1);
+set_start(mushroom2,start_mushroom2);
+set_start(mushroom3,start_mushroom3);
+set_start(mushroom5,start_mushroom5);
+set_start(bee1,start_bee1);
+set_start(bee2,start_bee2);
+set_start(bee3,start_bee3);
+set_start(bee4,start_bee4);
+set_start(bee5,start_bee5);
+set_start(boss,start_boss);
 set_start(stab1,start_stab1);
 set_start(stab2,start_stab2);
 set_start(stab3,start_stab3);
+set_start(stab4,start_stab4);
+set_start(stab5,start_stab5);
+set_start(stab6,start_stab6);
+set_start(stab7,start_stab7);
+set_start(stab8,start_stab8);
+set_start(stab9,start_stab9);
+set_start(stab10,start_stab10);
+set_start(stab11,start_stab11);
+set_start(stab12,start_stab12);
+set_start(stab13,start_stab13);
+set_start(stab14,start_stab14);
+set_start(stab15,start_stab15);
+set_start(stab16,start_stab16);
+set_start(stab17,start_stab17);
 set_update(mario, update_player);
 set_update(heart1,update_heart1);
 set_update(heart2,update_heart2);
 set_update(heart3,update_heart3);
-walk_up_and_down(mushroom1,1,1.5);
-
+walk_up_and_down(mushroom1,1,3);
+walk_up_and_down(mushroom2,15,20);
+walk_up_and_down(mushroom3,25,29);
+walk_up_and_down(mushroom5,43,47);
+walk_up_and_down(bee1,37,47);
+walk_up_and_down(bee2,35,40);
+walk_up_and_down(bee3,33,50);
+walk_up_and_down(bee4,31,40);
+walk_up_and_down(bee5,29,39);
+walk_up_and_down(boss,45,55);
 //enter 和 stay 只能交换着用
 on_collision_enter(mushroom1,pea1Cmushroom);
+on_collision_enter(mushroom2,pea2Cmushroom);
+on_collision_enter(mushroom5,pea3Cmushroom);
+on_collision_enter(boss,pea_bigCboss);
 on_collision_enter(mario,marioCsth);
 
-//set_start(ground_far,start_ground_far);
-/*不确定这样传送马里奥行不行
-destroy(mario);
-function start_player_again(gameObject){
-    set_position(gameObject, 25, 2, 0);
-    set_scale(gameObject, 0.5, 0.5, 1);
-    apply_rigidbody(gameObject);
-}
-const mario2=instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario.png");
-set_start(mario2,start_player_again);
-set_update(mario2, update_player);
-*/
+
 }
 
 let show_operations = true;
 let start_game = true;
-let difficulty_selection = true;
+//let difficulty_selection = true;
 
 const Page_update = (gameObject) => {
     if(start_game){
@@ -579,11 +988,11 @@ const Page_update = (gameObject) => {
         gui_label("game name", 150, 100, 120);
         gui_button("PLAY",  300, 320 ,50,()=>{
           show_operations = !show_operations;
-          difficulty_selection = !difficulty_selection;
+          //difficulty_selection = !difficulty_selection;
         }
         );
     }
-    if(!difficulty_selection){
+    /*if(!difficulty_selection){
         gui_label("DIFFICULTY SELECTION", 150, 100, 50);
         gui_button("EASY",  300, 200 ,50,()=>{
           difficulty_selection = !difficulty_selection;
@@ -605,8 +1014,8 @@ const Page_update = (gameObject) => {
           difficulty_selection = !difficulty_selection;
         }
         );
-    }
-if(!show_operations&&difficulty_selection){
+    }*/
+if(!show_operations/*&&difficulty_selection*/){
          gui_label("'A'move left,'B'move right,'W'jump", 110, 100, 40);
          gui_button("START",  300, 320 ,50,()=>{
            start_game = !start_game;
@@ -615,7 +1024,8 @@ if(!show_operations&&difficulty_selection){
          }
         );
          gui_button("BACK",  300, 480 ,50,()=>
-          difficulty_selection = !difficulty_selection
+          //difficulty_selection = !difficulty_selection
+          show_operations = !show_operations
         );
      }
   }
