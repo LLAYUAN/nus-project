@@ -5,8 +5,9 @@
 //
 //every square's width is 2/3
 import {init_unity_academy_3d, init_unity_academy_2d, set_start, set_update,
-instantiate, delta_time, instantiate_sprite, same_gameobject, destroy,
-translate_world,get_key_down, get_key, get_key_up, get_position, copy_position,
+instantiate,instantiate_empty,gui_button, gui_label, delta_time, 
+same_gameobject, destroy,translate_world,get_key_down, get_key, get_key_up, 
+get_position, copy_position,instantiate_sprite,
 set_position, get_rotation_euler, set_rotation_euler, rotate_world,
 get_scale, set_scale, play_animator_state, add_impulse_force,
 apply_rigidbody, get_angular_velocity, get_mass, get_velocity,
@@ -16,6 +17,15 @@ get_main_camera_following_target } from "unity_academy";
 
 init_unity_academy_2d();
 
+const mario2=instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario.png");
+
+const start_mario2 = (gameObject) => {
+    set_position(gameObject,10,10,0);
+    set_scale(gameObject,0.01,0.01,0.01);
+};
+
+set_start(mario2,start_mario2);
+function play_game(){
 // Load custom sprite from URL (Need CORS Cross-Domain header)
 const pea_url="https://s2.loli.net/2023/07/19/QSuJvp651WCkX8H.png";
 const peashooter_url="https://s2.loli.net/2023/07/19/oVSbhH7XDiwPmdj.png";
@@ -29,6 +39,7 @@ const flag_url="https://s2.loli.net/2023/07/19/yZY256uqvCJDOoV.png";
 const mushroom_url="https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png";
 const mobilebox_url="https://s2.loli.net/2023/07/20/sTCYW5cmzr7EoLi.png";
 const stab_url="https://s2.loli.net/2023/07/20/JXCiUTH3uKcWDBb.png";
+const game_over_url="https://s2.loli.net/2023/07/20/odwHNmiYGEcB4KI.png";
 const mario = instantiate_sprite(mario_url);
 const ground = instantiate_sprite(ground_url);
 const ground1 = instantiate_sprite(ground_url);
@@ -305,7 +316,13 @@ function update_player(gameObject){
 
     set_rotation_euler(gameObject, 0, 0, 0);
     
-    if(health===0){destroy(mario);}
+    if(health===0){
+        destroy(mario);
+        const gameover=instantiate_sprite(game_over_url);
+        const start_gameover=(gameObj)=>set_position(gameObj,
+        get_position(main_cam_target)[0],get_position(main_cam_target)[1],-50);
+        set_start(gameover,start_gameover);
+    }
     
     copy_position(gameObject, main_cam_target, 0, 0, Infinity);
     
@@ -345,12 +362,13 @@ function marioOnCollisionEnter(self, other){
 }
 */
 
-//to keep heart is always at top right
-//put heart in different z axis to avoid collision
+
 let heart_num1=1;
 let heart_num2=2;
 let heart_num3=3;
 //use heart_num to make sure use destroy only once
+//to keep heart is always at top right
+//put heart in different z axis to avoid collision
 function update_heart1(gameObject){
     if(health<=0&&heart_num1!==0){
         destroy(heart1);
@@ -435,6 +453,29 @@ function marioCsth(self,other){
         gethit();
     }
 }
+const far_ground1= instantiate_sprite(ground_url);
+const far_ground2= instantiate_sprite(ground_url);
+const far_ground3= instantiate_sprite(ground_url);
+const far_ground4= instantiate_sprite(ground_url);
+const far_ground5= instantiate_sprite(ground_url);
+
+const start_far_ground1= (gameObject)=> set_position(gameObject,500,0,0);
+const start_far_ground2= (gameObject)=> set_position(gameObject,505,0,0);
+const start_far_ground3= (gameObject)=> set_position(gameObject,510,0,0);
+const start_far_ground4= (gameObject)=> set_position(gameObject,495,0,0);
+const start_far_ground5= (gameObject)=> set_position(gameObject,490,0,0);
+
+function start_player_again(gameObject){
+    set_position(gameObject, 25, 2, 0);
+    set_scale(gameObject, 0.5, 0.5, 1);
+    apply_rigidbody(gameObject);
+}
+
+set_start(far_ground1,start_far_ground1);
+set_start(far_ground2,start_far_ground2);
+set_start(far_ground3,start_far_ground3);
+set_start(far_ground4,start_far_ground4);
+set_start(far_ground5,start_far_ground5);
 set_start(mystery_box1, start_mystery_box1);
 set_start(mario, start_player);
 set_start(heart1,start_heart1);
@@ -526,6 +567,57 @@ const mario2=instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazona
 set_start(mario2,start_player_again);
 set_update(mario2, update_player);
 */
+}
 
+let show_operations = true;
+let start_game = true;
+let difficulty_selection = true;
 
-
+const Page_update = (gameObject) => {
+    if(start_game){
+    if(show_operations){
+        gui_label("game name", 150, 100, 120);
+        gui_button("PLAY",  300, 320 ,50,()=>{
+          show_operations = !show_operations;
+          difficulty_selection = !difficulty_selection;
+        }
+        );
+    }
+    if(!difficulty_selection){
+        gui_label("DIFFICULTY SELECTION", 150, 100, 50);
+        gui_button("EASY",  300, 200 ,50,()=>{
+          difficulty_selection = !difficulty_selection;
+          //将难度函数添加在这里
+        }
+        );
+        gui_button("NORMAL",  300, 290 ,50,()=>{
+         difficulty_selection = !difficulty_selection;
+          //将难度函数添加在这里
+        }
+        );
+        gui_button("DIFFICULTY",  300, 380 ,50,()=>{
+         difficulty_selection = !difficulty_selection;
+          //将难度函数添加在这里
+        }
+        );
+        gui_button("BACK",  300, 470 ,50,()=>{
+          show_operations = !show_operations;
+          difficulty_selection = !difficulty_selection;
+        }
+        );
+    }
+if(!show_operations&&difficulty_selection){
+         gui_label("'A'move left,'B'move right,'W'jump", 110, 100, 40);
+         gui_button("START",  300, 320 ,50,()=>{
+           start_game = !start_game;
+          //将开始游戏函数添加在这里 
+          play_game();
+         }
+        );
+         gui_button("BACK",  300, 480 ,50,()=>
+          difficulty_selection = !difficulty_selection
+        );
+     }
+  }
+};
+set_update(mario2, Page_update);
