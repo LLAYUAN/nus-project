@@ -17,34 +17,194 @@ get_main_camera_following_target } from "unity_academy";
 init_unity_academy_2d();
 
 // Load custom sprite from URL (Need CORS Cross-Domain header)
-const mario = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario.png");
-const ground = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-const ground1 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-const ground2 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-const wall1 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-const ground4 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-const ground3 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-const mystery_box = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mystery_box.png");
-const ground5 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-const ground6 = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
-const ground_far = instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png");
+const pea_url="https://s2.loli.net/2023/07/19/QSuJvp651WCkX8H.png";
+const peashooter_url="https://s2.loli.net/2023/07/19/oVSbhH7XDiwPmdj.png";
+const heartSprite_url="https://s2.loli.net/2023/07/19/CvpdEPZGR2HQr8a.png";
+const ground_url="https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario_ground.png";
+const mario_url="https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mario.png";
+const mysterybox_url="https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mystery_box.png";
+const flagpole_url="https://s2.loli.net/2023/07/19/MaseohjLJgA2v4R.png";
+const flagphead_url="https://s2.loli.net/2023/07/19/RnyuzGwYs8cJWb3.png";
+const flag_url="https://s2.loli.net/2023/07/19/yZY256uqvCJDOoV.png";
+const mushroom_url="https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png";
+const mobilebox_url="https://s2.loli.net/2023/07/20/sTCYW5cmzr7EoLi.png";
+const stab_url="https://s2.loli.net/2023/07/20/JXCiUTH3uKcWDBb.png";
+const mario = instantiate_sprite(mario_url);
+const ground = instantiate_sprite(ground_url);
+const ground1 = instantiate_sprite(ground_url);
+const ground2 = instantiate_sprite(ground_url);
+const ground3 = instantiate_sprite(ground_url);
+const ground4 = instantiate_sprite(ground_url);
+const ground5 = instantiate_sprite(ground_url);
+const ground6 = instantiate_sprite(ground_url);
+const ground7 = instantiate_sprite(ground_url);
+const ground8 = instantiate_sprite(ground_url);
+const ground9 = instantiate_sprite(ground_url);
+const ground10 = instantiate_sprite(ground_url);
+const ground11 = instantiate_sprite(ground_url);
+const ground12 = instantiate_sprite(ground_url);
+const ground13 = instantiate_sprite(ground_url);
+const ground14 = instantiate_sprite(ground_url);
+const ground15 = instantiate_sprite(ground_url);
+const ground16 = instantiate_sprite(ground_url);
+const ground17 = instantiate_sprite(ground_url);
+const ground18 = instantiate_sprite(ground_url);
+const ground19 = instantiate_sprite(ground_url);
+const ground20 = instantiate_sprite(ground_url);
+const ground21 = instantiate_sprite(ground_url);
+const ground22 = instantiate_sprite(ground_url);
+const ground23 = instantiate_sprite(ground_url);
+const ground24 = instantiate_sprite(ground_url);
+const ground25 = instantiate_sprite(ground_url);
+const ground26 = instantiate_sprite(ground_url);
+const ground27 = instantiate_sprite(ground_url);
+const ground28 = instantiate_sprite(ground_url);
+const ground29 = instantiate_sprite(ground_url);
+const ground30 = instantiate_sprite(ground_url);
+const ground31 = instantiate_sprite(ground_url);
+const ground32 = instantiate_sprite(ground_url);
+const ground33 = instantiate_sprite(ground_url);
+const ground34 = instantiate_sprite(ground_url);
+const ground35 = instantiate_sprite(ground_url);
+const ground36 = instantiate_sprite(ground_url);
+const ground37 = instantiate_sprite(ground_url);
+const ground38 = instantiate_sprite(ground_url);
+const ground39 = instantiate_sprite(ground_url);
+const ground40 = instantiate_sprite(ground_url);
+const ground41 = instantiate_sprite(ground_url);
+const ground42 = instantiate_sprite(ground_url);
+const ground43 = instantiate_sprite(ground_url);
+const ground44 = instantiate_sprite(ground_url);
+const ground45 = instantiate_sprite(ground_url);
+const ground46 = instantiate_sprite(ground_url);
+const ground47 = instantiate_sprite(ground_url);
 
-let health=3;
-const heartSpriteURL =
-  "https://s2.loli.net/2023/07/19/CvpdEPZGR2HQr8a.png";
-const heart1 = instantiate_sprite(heartSpriteURL);
-const heart2 = instantiate_sprite(heartSpriteURL);
-const heart3 = instantiate_sprite(heartSpriteURL);
+const wall1 = instantiate_sprite(ground_url);
+const wall2 = instantiate_sprite(ground_url);
+const slope = instantiate_sprite(ground_url);
+const slope1 = instantiate_sprite(ground_url);
+const slope2 = instantiate_sprite(ground_url);
+const slope3 = instantiate_sprite(ground_url);
+
+const mystery_box1 = instantiate_sprite(mysterybox_url);
+const mushroom1 = instantiate_sprite(mushroom_url);
+const stab1 = instantiate_sprite(stab_url);
+const stab2 = instantiate_sprite(stab_url);
+const stab3 = instantiate_sprite(stab_url);
+
+const flagpole1 = instantiate_sprite(flagpole_url);
+const flagpole2 = instantiate_sprite(flagpole_url);
+const flagpole3 = instantiate_sprite(flagpole_url);
+const flagpole4 = instantiate_sprite(flagpole_url);
+const flagphead = instantiate_sprite(flagphead_url);
+const flag = instantiate_sprite(flag_url);
+
+const heart1 = instantiate_sprite(heartSprite_url);
+const heart2 = instantiate_sprite(heartSprite_url);
+const heart3 = instantiate_sprite(heartSprite_url);
 
 const main_cam_target = get_main_camera_following_target();
-//set mushroom walk up and down
-//const mushroom1= instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png");
-const mushroom2= instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png");
+//const mushroom2= instantiate_sprite("https://unity-academy.s3.ap-southeast-1.amazonaws.com/external_assets/mushroom.png");
 function start_player(gameObject){
     set_position(gameObject, -2, 2, 0);
     set_scale(gameObject, 0.5, 0.5, 1);
     apply_rigidbody(gameObject);
 }
+const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
+const start_ground1 = (gameObject) => set_position(gameObject, 3, -1, 0);
+const start_ground2 = (gameObject) => set_position(gameObject, 6, 0, 0);
+const start_ground3 = (gameObject) => set_position(gameObject, 9, -1, 0);
+const start_ground4 = (gameObject) => set_position(gameObject, 12, -1, 0);
+const start_ground5 = (gameObject) => set_position(gameObject, 15, 0, 0);
+const start_ground6 = (gameObject) => set_position(gameObject, 18, 0, 0);
+const start_ground7 = (gameObject) => set_position(gameObject, 21, -1, 0);
+const start_ground8 = (gameObject) => set_position(gameObject, 24, 0, 0);
+const start_ground9 = (gameObject) => set_position(gameObject, 27, -2, 0);
+const start_ground10 = (gameObject) => set_position(gameObject, 30, -1, 0);
+const start_ground11 = (gameObject) => set_position(gameObject, 33, 0, 0);
+const start_ground12 = (gameObject) => set_position(gameObject, 36, 1, 0);
+const start_ground13 = (gameObject) => set_position(gameObject, 25, -15, 0);
+const start_ground14 = (gameObject) => set_position(gameObject, 28, -15, 0);
+const start_ground15 = (gameObject) => set_position(gameObject, 31, -15, 0);
+const start_ground16 = (gameObject) => set_position(gameObject, 34, -15, 0);
+const start_ground17 = (gameObject) => set_position(gameObject, 37, -15, 0);
+const start_ground18 = (gameObject) => set_position(gameObject, 40, -15, 0);
+const start_ground19 = (gameObject) => set_position(gameObject, 43, -15, 0);
+const start_ground20 = (gameObject) => set_position(gameObject, 46, -15, 0);
+const start_ground21 = (gameObject) => set_position(gameObject, 49, -15, 0);
+const start_ground22 = (gameObject) => set_position(gameObject, 52, -15, 0);
+const start_ground26 = (gameObject) => set_position(gameObject, 55, -15, 0);
+const start_ground27 = (gameObject) => set_position(gameObject, 58, -15, 0);
+const start_ground28 = (gameObject) => set_position(gameObject, 61, -15, 0);
+const start_ground29 = (gameObject) => set_position(gameObject, 64, -15, 0);
+const start_ground30 = (gameObject) => set_position(gameObject, 67, -15, 0);
+const start_ground31 = (gameObject) => set_position(gameObject, 70, -15, 0);
+const start_ground32 = (gameObject) => set_position(gameObject, 73, -15, 0);
+const start_ground33 = (gameObject) => set_position(gameObject, 76, -15, 0);
+const start_ground34 = (gameObject) => set_position(gameObject, 67, -14, 0);
+const start_ground35 = (gameObject) => set_position(gameObject, 68, -13, 0);
+const start_ground36 = (gameObject) => set_position(gameObject, 69, -12, 0);
+const start_ground37 = (gameObject) => set_position(gameObject, 70, -11, 0);
+const start_ground38 = (gameObject) => set_position(gameObject, 71, -10, 0);
+const start_ground39 = (gameObject) => set_position(gameObject, 72, -9, 0);
+const start_ground40 = (gameObject) => set_position(gameObject, 73, -8, 0);
+const start_ground41 = (gameObject) => set_position(gameObject, 74, -7, 0);
+const start_ground42 = (gameObject) => set_position(gameObject, 79, -15, 0);
+const start_ground43 = (gameObject) => set_position(gameObject, 82, -15, 0);
+const start_ground44 = (gameObject) => set_position(gameObject, 85, -15, 0);
+const start_ground45 = (gameObject) => set_position(gameObject, 88, -15, 0);
+const start_ground46 = (gameObject) => set_position(gameObject, 91, -15, 0);
+const start_ground47 = (gameObject) => set_position(gameObject, 94, -15, 0);
+
+
+const start_ground23 = (gameObject) => set_position(gameObject, 39, -1, 0);
+const start_ground24 = (gameObject) => set_position(gameObject, 42, 0, 0);
+const start_ground25 = (gameObject) => set_position(gameObject, 45, 1, 0);
+
+const start_flagpole1 = (gameObject) => set_position(gameObject,81,-13,0);
+const start_flagpole2 = (gameObject) => set_position(gameObject,81,-11,0);
+const start_flagpole3 = (gameObject) => set_position(gameObject,81,-10,0);
+const start_flagpole4 = (gameObject) => set_position(gameObject,81,-9,0);
+const start_flaghead = (gameObject) =>{
+    set_position(gameObject,81,-7,0);
+    set_scale(gameObject,2,2,2);
+};
+const start_flag = (gameObject) => {
+    set_position(gameObject,80,-7,0);
+    set_scale(gameObject,2,2.5,2.5);
+};
+
+const start_wall1 = (gameObject) => {
+    set_position(gameObject, -6, 1.8, 0);
+    set_rotation_euler(gameObject, 0, 0, 90);
+};
+const start_wall2 = (gameObject) => {
+    set_position(gameObject, 36.75, 0.8, 0);
+    set_rotation_euler(gameObject, 0, 0, 90);
+};
+
+
+const start_slope = (gameObject) =>{
+    set_position(gameObject, -4, -1, 0);
+};
+
+
+const start_slope1 = (gameObject) =>{
+    set_position(gameObject, 49, -1, 0);
+    set_rotation_euler(gameObject, 0, 0, 30);
+};
+
+
+const start_slope2 = (gameObject) =>{
+    set_position(gameObject, 47, -3, 0);
+    set_rotation_euler(gameObject, 0, 0, 30);
+};
+
+
+const start_slope3 = (gameObject) =>{
+    set_position(gameObject, 45, -5, 0);
+    set_rotation_euler(gameObject, 0, 0, 30);
+};
 
 const start_heart1 = (gameObject) => {
     set_position(gameObject,-2.4,2.7,100);//heart1 position: 
@@ -64,47 +224,42 @@ const start_heart3 = (gameObject) => {
     set_scale(gameObject,0.2,0.2,0.2);
 };
 
-
-const start_ground = (gameObject) => set_position(gameObject, 0, -2, 0);
-const start_ground1 = (gameObject) => set_position(gameObject, 3, -1, 0);
-const start_ground2 = (gameObject) => set_position(gameObject, 5, 1.2, 0);
-const start_wall1 = (gameObject) => {
-    set_position(gameObject, -6, 1.8, 0);
-    set_rotation_euler(gameObject, 0, 0, 90);
-};
-const start_ground3 = (gameObject) =>{
-    set_position(gameObject, -4, -1, 0);
+const start_mystery_box1 = (gameObject) =>{
+     set_position(gameObject, -0.5, -0.6, 0);
 };
 
-const start_ground4 = (gameObject) => {set_position(gameObject, 12, 1.4, 0);};
-
-const start_ground_far = (gameObject)=>{set_position(gameObject,25,1,0);};
-const start_mystery_box = (gameObject) =>{
-    set_position(gameObject, 1, 1.5, 0);
+const start_mushroom1 = (gameObject) =>{
+    set_position(gameObject,1,0,0);
+    apply_rigidbody(gameObject);
 };
 
+const start_stab1 = (gameObject) =>{
+    set_position(gameObject,0,-1.25,0);
+};
+
+const start_stab2 = (gameObject) =>{
+    set_position(gameObject,0.5,-1.25,0);
+};
+
+const start_stab3 = (gameObject) =>{
+    set_position(gameObject,-0.5,-1.25,0);
+};
 /*const start_mushroom = (gameObject) =>{
     set_position(gameObject, 1, 2.5, 0);
     apply_rigidbody(gameObject);
 };*/
 const start_peashooter1= (gameObject)=>{
-    set_position(gameObject,1,2,0);
+    set_position(gameObject,-0.5,-0.1,0);
     set_scale(gameObject,0.2,0.2,0.2);
 };
 const start_pea1 = (gameObject)=>{
-    set_position(gameObject,1.2,2.15,0);
+    set_position(gameObject,-0.3,0.05,0);
     set_scale(gameObject,0.6,0.6,1);
 };// only the pea on certain position can use this function
   // every pea x(peashooter)+0.2 y(peashooter)+0.15;
-/*const start_mushroom1 = (gameObject)=>{
-    set_position(gameObject,5,2.15,0);
-    apply_rigidbody(gameObject);
-};*/
 
-const start_mushroom2= (gameObject)=>{
-    set_position(gameObject,5,2.15,0);
-    apply_rigidbody(gameObject);
-};
+
+
 //set auto mushroom
 /*const update_mushroom = (gameObject) =>{
     
@@ -128,6 +283,11 @@ const start_mushroom2= (gameObject)=>{
 function update_pea(gameObject){
     translate_world(gameObject, delta_time(),0,0);
 }
+
+function update_flag(gameObject){
+    if(get_position(gameObject)[1]>-13){translate_world(gameObject,0,-delta_time(),0);}
+}
+
 function update_player(gameObject){
     
     const moveSpeed = 3;
@@ -145,15 +305,17 @@ function update_player(gameObject){
 
     set_rotation_euler(gameObject, 0, 0, 0);
     
+    if(health===0){destroy(mario);}
+    
     copy_position(gameObject, main_cam_target, 0, 0, Infinity);
+    
 }
 
 //mushroom2 is walking up and down
 //***get_position do get a number***
 //***two translate can be added***
+//range is left and right
 function walk_up_and_down(gameObject,left,right){
-    //const x=get_position(ground)[0]-0.1;why i cant use this way?
-    //const y=get_position(ground)[0]+0.1;
     let flag=1;//flag is used to judge walk left/right
 function update_mushroom(gameObject){
     if(get_position(gameObject)[0]<left) {flag=1;}
@@ -185,68 +347,174 @@ function marioOnCollisionEnter(self, other){
 
 //to keep heart is always at top right
 //put heart in different z axis to avoid collision
+let heart_num1=1;
+let heart_num2=2;
+let heart_num3=3;
+//use heart_num to make sure use destroy only once
 function update_heart1(gameObject){
+    if(health<=0&&heart_num1!==0){
+        destroy(heart1);
+        heart_num1=0;
+    }
     copy_position(main_cam_target,gameObject,-0.4,0.7,100);
 }
 
 function update_heart2(gameObject){
     copy_position(main_cam_target,gameObject,0,0.7,100);
+    if(health<=1&&heart_num2!==0) {
+        destroy(heart2);
+        heart_num2=0;
+    }
 }
 
 function update_heart3(gameObject){
     copy_position(main_cam_target,gameObject,0.4,0.7,100);
-}
-
-
-let peashooter1=null;
-function marioCbox1(self,other){
-    if(same_gameobject(other,mystery_box)&&is_null(peashooter1)){
-        peashooter1= instantiate_sprite("https://s2.loli.net/2023/07/19/oVSbhH7XDiwPmdj.png");
-        set_start(peashooter1,start_peashooter1);
+    if(health<=2&&heart_num3!==0){
+        destroy(heart3);
+        heart_num3=0;
     }
 }
 
-//when mario touches the peashooter, peashooter shoot
-let pea1=null;
-function marioCpeashooter1(self,other){
-    if(same_gameobject(other,peashooter1)&&is_null(pea1)){
-        pea1=instantiate_sprite("https://s2.loli.net/2023/07/19/QSuJvp651WCkX8H.png");
-        set_start(pea1,start_pea1);
-        set_update(pea1,update_pea);
-    }
-}
-
-//when pea1 touches mushroom2, they disappear together
-function pea1Cmushroom2(self,other){
+//when pea1 touches mushroom, they disappear together
+function pea1Cmushroom(self,other){
     if(same_gameobject(other,pea1)) {
         destroy(self);
         destroy(pea1);
     }
   }
 
-set_start(ground, start_ground);
-set_start(ground1, start_ground1);
-set_start(ground2, start_ground2);
-set_start(wall1, start_wall1);
-set_start(ground4, start_ground4);
-set_start(ground3, start_ground3);
-set_start(mystery_box, start_mystery_box);
-//set_start(mushroom1,start_mushroom1);
-set_start(mushroom2,start_mushroom2);
+let health=3;
+function gethit(){
+    health=health-1;
+}
+
+let peashooter1=null;
+let pea1=null;
+let is_down=null;
+function marioCsth(self,other){
+    // mario touches mystery_box1
+    if(same_gameobject(other,mystery_box1)&&is_null(peashooter1)){
+        peashooter1= instantiate_sprite(peashooter_url);
+        set_start(peashooter1,start_peashooter1);
+    }
+    
+    //when mario touches the peashooter, peashooter shoot
+    if(same_gameobject(other,peashooter1)&&is_null(pea1)){
+        pea1=instantiate_sprite(pea_url);
+        set_start(pea1,start_pea1);
+        set_update(pea1,update_pea);
+    }
+    
+    ////when mario touches mushroom, he gets hit
+    if(same_gameobject(other,mushroom1)){
+        destroy(mushroom1);
+        gethit();
+    }
+    
+    //mario touches flag and flag down
+    if(same_gameobject(other,flag)) {is_down=1;}
+    if(is_down===1) {
+        set_update(flag,update_flag);
+    }
+    
+    //mario touches stab1
+    if(same_gameobject(other,stab1)){
+        destroy(stab1);
+        gethit();
+    }
+    
+    //mario touches stab2
+    if(same_gameobject(other,stab2)){
+        destroy(stab2);
+        gethit();
+    }
+    
+    //mario touches stab3
+    if(same_gameobject(other,stab3)){
+        destroy(stab3);
+        gethit();
+    }
+}
+set_start(mystery_box1, start_mystery_box1);
+set_start(mario, start_player);
 set_start(heart1,start_heart1);
 set_start(heart2,start_heart2);
 set_start(heart3,start_heart3);
-set_start(mario, start_player);
+set_start(ground, start_ground);
+set_start(ground1, start_ground1);
+set_start(ground2, start_ground2);
+set_start(ground3, start_ground3);
+set_start(ground4, start_ground4);
+set_start(ground5, start_ground5);
+set_start(ground6, start_ground6);
+set_start(ground7, start_ground7);
+set_start(ground8, start_ground8);
+set_start(ground9, start_ground9);
+set_start(ground10, start_ground10);
+set_start(ground11, start_ground11);
+set_start(ground12, start_ground12);
+set_start(ground13, start_ground13);
+set_start(ground14, start_ground14);
+set_start(ground15, start_ground15);
+set_start(ground16, start_ground16);
+set_start(ground17, start_ground17);
+set_start(ground18, start_ground18);
+set_start(ground19, start_ground19);
+set_start(ground20, start_ground20);
+set_start(ground21, start_ground21);
+set_start(ground22, start_ground22);
+set_start(ground23, start_ground23);
+set_start(ground24, start_ground24);
+set_start(ground25, start_ground25);
+set_start(ground26, start_ground26);
+set_start(ground27, start_ground27);
+set_start(ground28, start_ground28);
+set_start(ground29, start_ground29);
+set_start(ground30, start_ground30);
+set_start(ground31, start_ground31);
+set_start(ground32, start_ground32);
+set_start(ground33, start_ground33);
+set_start(ground34, start_ground34);
+set_start(ground35, start_ground35);
+set_start(ground36, start_ground36);
+set_start(ground37, start_ground37);
+set_start(ground38, start_ground38);
+set_start(ground39, start_ground39);
+set_start(ground40, start_ground40);
+set_start(ground41, start_ground41);
+set_start(ground42, start_ground42);
+set_start(ground43, start_ground43);
+set_start(ground44, start_ground44);
+set_start(ground45, start_ground45);
+set_start(ground46, start_ground46);
+set_start(ground47, start_ground47);
+set_start(flagpole1,start_flagpole1);
+set_start(flagpole2,start_flagpole2);
+set_start(flagpole3,start_flagpole3);
+set_start(flagpole4,start_flagpole4);
+set_start(flagphead,start_flaghead);
+set_start(flag,start_flag);
+set_start(wall1, start_wall1);
+set_start(wall2, start_wall2);
+set_start(slope, start_slope);
+set_start(slope1, start_slope1);
+set_start(slope2, start_slope2);
+set_start(slope3, start_slope3);
+set_start(mushroom1,start_mushroom1);
+set_start(stab1,start_stab1);
+set_start(stab2,start_stab2);
+set_start(stab3,start_stab3);
 set_update(mario, update_player);
 set_update(heart1,update_heart1);
 set_update(heart2,update_heart2);
 set_update(heart3,update_heart3);
-walk_up_and_down(mushroom2,3,7);
-on_collision_enter(mario, marioCbox1);
-on_collision_stay(mario,marioCpeashooter1);
-on_collision_enter(mushroom2,pea1Cmushroom2);
+walk_up_and_down(mushroom1,1,1.5);
 
-set_start(ground_far,start_ground_far);
+//enter 和 stay 只能交换着用
+on_collision_enter(mushroom1,pea1Cmushroom);
+on_collision_enter(mario,marioCsth);
+
+//set_start(ground_far,start_ground_far);
 /*不确定这样传送马里奥行不行
 destroy(mario);
 function start_player_again(gameObject){
